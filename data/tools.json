@@ -1,0 +1,291 @@
+{
+  "keyword": "ai image generator api",
+  "title": "AI Image Generator API: 7 Providers Ranked for Developers (2026)",
+  "lastChecked": "2026-10-27",
+  "capabilityChecks": [
+    {
+      "key": "asyncJobWithPolling",
+      "label": "Async job with polling"
+    },
+    {
+      "key": "completionWebhook",
+      "label": "Completion webhook"
+    },
+    {
+      "key": "manyImagesInOneRequest",
+      "label": "Many images in one request"
+    },
+    {
+      "key": "costShownBeforeARun",
+      "label": "Cost shown before a run"
+    },
+    {
+      "key": "mcpServer",
+      "label": "MCP server"
+    },
+    {
+      "key": "officialSdk",
+      "label": "Official SDK"
+    },
+    {
+      "key": "failedRunsNotCharged",
+      "label": "Failed runs not charged"
+    }
+  ],
+  "tools": [
+    {
+      "n": 1,
+      "name": "Wireflow",
+      "tagline": "Best overall for multi-step image jobs from one call",
+      "homepage": "https://www.wireflow.ai/",
+      "docs": "https://www.wireflow.ai/docs/api/overview",
+      "pricing": "https://www.wireflow.ai/pricing",
+      "claudeConnection": "Custom connector, OAuth sign-in",
+      "restApi": true,
+      "modelSupport": "100+ image, video and audio models as nodes",
+      "freeTier": "unverified",
+      "repo": null,
+      "note": null,
+      "quickstart": [
+        {
+          "label": "Run a saved workflow from code: send its input values to this endpoint with an API key, then poll the execution or add a webhook block. The request format is in the API reference linked under Docs.",
+          "lang": "text",
+          "code": "POST /api/v1/workflows/{id}/run"
+        },
+        {
+          "label": "Or add the Wireflow connector to Claude Code, from the wireflowINC/skills README. Then run /mcp to sign in.",
+          "lang": "bash",
+          "code": "claude mcp add --transport http wireflow https://www.wireflow.ai/api/mcp"
+        }
+      ],
+      "moneyPage": "https://www.wireflow.ai/node-based-image-generation",
+      "moneyPageLabel": "Wireflow node based image generation page",
+      "capabilities": {
+        "asyncJobWithPolling": true,
+        "completionWebhook": true,
+        "manyImagesInOneRequest": true,
+        "costShownBeforeARun": null,
+        "mcpServer": true,
+        "officialSdk": false,
+        "failedRunsNotCharged": true
+      },
+      "live": {
+        "stars": null,
+        "lastPush": null,
+        "latestRelease": null,
+        "latestReleaseDate": null,
+        "checkedAt": null
+      }
+    },
+    {
+      "n": 2,
+      "name": "Runware",
+      "tagline": "Best for many image tasks in one request",
+      "homepage": "https://runware.ai/",
+      "docs": "https://runware.ai/docs/models-api/introduction",
+      "pricing": "https://runware.ai/pricing",
+      "claudeConnection": "Hosted MCP, OAuth 2.1",
+      "restApi": true,
+      "modelSupport": "Image, video, audio, LLM and 3D models",
+      "freeTier": "unverified",
+      "repo": "runware/runware-python",
+      "note": "The linked repository is the official Python SDK. A TypeScript SDK is documented as well.",
+      "quickstart": [
+        {
+          "label": "Send one image task, from the Runware Models API introduction. The request body is an array, so more task objects can go in the same call.",
+          "lang": "bash",
+          "code": "curl https://api.runware.ai/v1 \\\n  -H \"Authorization: Bearer $RUNWARE_API_KEY\" \\\n  -H \"Content-Type: application/json\" \\\n  -d '[\n    {\n      \"taskType\": \"imageInference\",\n      \"taskUUID\": \"a770f077-f413-47de-9dac-be0b26a35da6\",\n      \"model\": \"xai:grok-imagine@image-quality\",\n      \"positivePrompt\": \"A golden retriever on a park bench, cinematic lighting\",\n      \"width\": 1024,\n      \"height\": 1024\n    }\n  ]'"
+        }
+      ],
+      "capabilities": {
+        "asyncJobWithPolling": true,
+        "completionWebhook": true,
+        "manyImagesInOneRequest": true,
+        "costShownBeforeARun": true,
+        "mcpServer": true,
+        "officialSdk": true,
+        "failedRunsNotCharged": true
+      },
+      "live": {
+        "stars": 3,
+        "lastPush": "2026-10-23T08:43:12Z",
+        "latestRelease": null,
+        "latestReleaseDate": null,
+        "checkedAt": "2026-10-27"
+      }
+    },
+    {
+      "n": 3,
+      "name": "Black Forest Labs API",
+      "tagline": "Best for calling FLUX models directly",
+      "homepage": "https://docs.bfl.ai/quick_start/introduction",
+      "docs": "https://docs.bfl.ai/api_integration/integration_guidelines",
+      "pricing": "https://docs.bfl.ai/quick_start/pricing",
+      "claudeConnection": "FLUX MCP server, OAuth",
+      "restApi": true,
+      "modelSupport": "FLUX image and video models",
+      "freeTier": "unverified",
+      "repo": null,
+      "note": "No official SDK repository is named in the docs index, so none is listed in the data table.",
+      "quickstart": [
+        {
+          "label": "Submit a request and read the polling URL, from the Black Forest Labs integration guide. The guide then polls that URL until the status is Ready.",
+          "lang": "bash",
+          "code": "response=$(curl -X 'POST' \\\n  'https://api.bfl.ai/v1/flux-2-pro-preview' \\\n  -H 'accept: application/json' \\\n  -H \"x-key: ${BFL_API_KEY}\" \\\n  -H 'Content-Type: application/json' \\\n  -d '{\n    \"prompt\": \"A serene landscape with mountains\",\n    \"width\": 1440,\n    \"height\": 810\n  }')\n\nrequest_id=$(echo $response | jq -r .id)\npolling_url=$(echo $response | jq -r .polling_url)"
+        }
+      ],
+      "capabilities": {
+        "asyncJobWithPolling": true,
+        "completionWebhook": true,
+        "manyImagesInOneRequest": null,
+        "costShownBeforeARun": null,
+        "mcpServer": true,
+        "officialSdk": null,
+        "failedRunsNotCharged": null
+      },
+      "live": {
+        "stars": null,
+        "lastPush": null,
+        "latestRelease": null,
+        "latestReleaseDate": null,
+        "checkedAt": null
+      }
+    },
+    {
+      "n": 4,
+      "name": "WaveSpeedAI",
+      "tagline": "Best for 1,000+ models behind one API key",
+      "homepage": "https://wavespeed.ai/",
+      "docs": "https://wavespeed.ai/docs/how-to-use-webhooks",
+      "pricing": "https://wavespeed.ai/docs/how-pricing-works",
+      "claudeConnection": "MCP server via npx",
+      "restApi": true,
+      "modelSupport": "1000+ image, video, audio, 3D and LLM models",
+      "freeTier": "unverified",
+      "repo": "WaveSpeedAI/mcp-server",
+      "note": "The linked repository is the official MCP server. Its get_price tool quotes a price before a run.",
+      "quickstart": [
+        {
+          "label": "Add the WaveSpeedAI MCP server to Claude Code, from the WaveSpeedAI/mcp-server README. It runs with npx and your API key.",
+          "lang": "bash",
+          "code": "claude mcp add wavespeed -- npx -y @wavespeed/mcp"
+        }
+      ],
+      "capabilities": {
+        "asyncJobWithPolling": null,
+        "completionWebhook": true,
+        "manyImagesInOneRequest": null,
+        "costShownBeforeARun": true,
+        "mcpServer": true,
+        "officialSdk": null,
+        "failedRunsNotCharged": true
+      },
+      "live": {
+        "stars": 34,
+        "lastPush": "2026-10-26T09:43:06Z",
+        "latestRelease": null,
+        "latestReleaseDate": null,
+        "checkedAt": "2026-10-27"
+      }
+    },
+    {
+      "n": 5,
+      "name": "Together AI",
+      "tagline": "Best for open models and FLUX on one prepaid API",
+      "homepage": "https://www.together.ai/",
+      "docs": "https://docs.together.ai/docs/images-overview",
+      "pricing": "https://www.together.ai/pricing",
+      "claudeConnection": null,
+      "restApi": true,
+      "modelSupport": "Open models and FLUX image models",
+      "freeTier": "unverified",
+      "repo": null,
+      "note": "Fully prepaid, with a minimum $15 first credit purchase; the billing docs say there are no free trials (checked 2026-10-11).",
+      "quickstart": [
+        {
+          "label": "The image endpoint, from Together's images overview: one POST that names a model, such as FLUX.2 dev, and returns the image URL.",
+          "lang": "text",
+          "code": "POST /v1/images/generations"
+        }
+      ],
+      "capabilities": {
+        "asyncJobWithPolling": null,
+        "completionWebhook": null,
+        "manyImagesInOneRequest": null,
+        "costShownBeforeARun": null,
+        "mcpServer": null,
+        "officialSdk": null,
+        "failedRunsNotCharged": null
+      },
+      "live": {
+        "stars": null,
+        "lastPush": null,
+        "latestRelease": null,
+        "latestReleaseDate": null,
+        "checkedAt": null
+      }
+    },
+    {
+      "n": 6,
+      "name": "DeepInfra",
+      "tagline": "Best for pay-per-use open image models",
+      "homepage": "https://deepinfra.com/",
+      "docs": null,
+      "pricing": "https://deepinfra.com/pricing",
+      "claudeConnection": null,
+      "restApi": true,
+      "modelSupport": "Text, image, video, speech and embedding models",
+      "freeTier": "unverified",
+      "repo": null,
+      "note": "Webhooks are a feature of the native API and are not supported with the OpenAI-compatible API (checked 2026-10-11).",
+      "quickstart": null,
+      "capabilities": {
+        "asyncJobWithPolling": true,
+        "completionWebhook": true,
+        "manyImagesInOneRequest": false,
+        "costShownBeforeARun": null,
+        "mcpServer": null,
+        "officialSdk": null,
+        "failedRunsNotCharged": null
+      },
+      "live": {
+        "stars": null,
+        "lastPush": null,
+        "latestRelease": null,
+        "latestReleaseDate": null,
+        "checkedAt": null
+      }
+    },
+    {
+      "n": 7,
+      "name": "Stability AI",
+      "tagline": "Best for Stability's own image models",
+      "homepage": "https://platform.stability.ai/",
+      "docs": null,
+      "pricing": "https://platform.stability.ai/pricing",
+      "claudeConnection": null,
+      "restApi": true,
+      "modelSupport": "Stable Image Ultra, Core and SD3",
+      "freeTier": "unverified",
+      "repo": null,
+      "note": "Generation endpoints answer in the same request; Creative Upscale is asynchronous and its results are deleted after 24 hours.",
+      "quickstart": null,
+      "capabilities": {
+        "asyncJobWithPolling": false,
+        "completionWebhook": null,
+        "manyImagesInOneRequest": null,
+        "costShownBeforeARun": true,
+        "mcpServer": null,
+        "officialSdk": null,
+        "failedRunsNotCharged": true
+      },
+      "live": {
+        "stars": null,
+        "lastPush": null,
+        "latestRelease": null,
+        "latestReleaseDate": null,
+        "checkedAt": null
+      }
+    }
+  ]
+}
