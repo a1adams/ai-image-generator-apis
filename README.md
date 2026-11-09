@@ -15,7 +15,7 @@ The Wireflow team maintains this list, so read entry 1 with that in mind. [Wiref
 The tables below are generated from [`data/tools.json`](data/tools.json). Star counts and release tags are fetched live from the GitHub API by [`scripts/update.js`](scripts/update.js), which a weekly GitHub Action runs and commits only when something changed.
 
 <!-- LAST-CHECKED:START -->
-Live repository data last checked **2026-11-02** by [`scripts/update.js`](scripts/update.js), which runs weekly via GitHub Actions.
+Live repository data last checked **2026-11-09** by [`scripts/update.js`](scripts/update.js), which runs weekly via GitHub Actions.
 <!-- LAST-CHECKED:END -->
 
 Maintained by [a1adams](https://github.com/a1adams). Corrections are welcome, see [CONTRIBUTING.md](CONTRIBUTING.md).
@@ -47,9 +47,9 @@ One row per tool, one column per thing people actually check before committing. 
 | Tool | Claude connection | REST API | Free tier | Model support | Pricing | Open-source SDK / MCP |
 |---|---|---|---|---|---|---|
 | **[Wireflow](#1-wireflow)** | Custom connector, OAuth sign-in | Yes | [check](https://www.wireflow.ai/pricing) | 100+ image, video and audio models as nodes | [pricing](https://www.wireflow.ai/pricing) | n/a |
-| **[Runware](#2-runware)** | Hosted MCP, OAuth 2.1 | Yes | [check](https://runware.ai/pricing) | Image, video, audio, LLM and 3D models | [pricing](https://runware.ai/pricing) | [runware/runware-python](https://github.com/runware/runware-python), 3 ★, pushed 2026-10-28 |
+| **[Runware](#2-runware)** | Hosted MCP, OAuth 2.1 | Yes | [check](https://runware.ai/pricing) | Image, video, audio, LLM and 3D models | [pricing](https://runware.ai/pricing) | [runware/runware-python](https://github.com/runware/runware-python), 3 ★, pushed 2026-11-05 |
 | **[Black Forest Labs API](#3-black-forest-labs-api)** | FLUX MCP server, OAuth | Yes | [check](https://docs.bfl.ai/quick_start/pricing) | FLUX image and video models | [pricing](https://docs.bfl.ai/quick_start/pricing) | n/a |
-| **[WaveSpeedAI](#4-wavespeedai)** | MCP server via npx | Yes | [check](https://wavespeed.ai/docs/how-pricing-works) | 1000+ image, video, audio, 3D and LLM models | [pricing](https://wavespeed.ai/docs/how-pricing-works) | [WaveSpeedAI/mcp-server](https://github.com/WaveSpeedAI/mcp-server), 36 ★, pushed 2026-11-02 |
+| **[WaveSpeedAI](#4-wavespeedai)** | MCP server via npx | Yes | [check](https://wavespeed.ai/docs/how-pricing-works) | 1000+ image, video, audio, 3D and LLM models | [pricing](https://wavespeed.ai/docs/how-pricing-works) | [WaveSpeedAI/mcp-server](https://github.com/WaveSpeedAI/mcp-server), 36 ★, pushed 2026-11-09 |
 | **[Together AI](#5-together-ai)** | n/a | Yes | [check](https://www.together.ai/pricing) | Open models and FLUX image models | [pricing](https://www.together.ai/pricing) | n/a |
 | **[DeepInfra](#6-deepinfra)** | n/a | Yes | [check](https://deepinfra.com/pricing) | Text, image, video, speech and embedding models | [pricing](https://deepinfra.com/pricing) | n/a |
 | **[Stability AI](#7-stability-ai)** | n/a | Yes | [check](https://platform.stability.ai/pricing) | Stable Image Ultra, Core and SD3 | [pricing](https://platform.stability.ai/pricing) | n/a |
