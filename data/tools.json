@@ -1,7 +1,7 @@
 {
   "keyword": "ai image generator api",
   "title": "AI Image Generator API: 7 Providers Ranked for Developers (2026)",
-  "lastChecked": "2026-11-16",
+  "lastChecked": "2026-11-23",
   "capabilityChecks": [
     {
       "key": "asyncJobWithPolling",
@@ -108,10 +108,10 @@
       },
       "live": {
         "stars": 3,
-        "lastPush": "2026-11-13T22:09:40Z",
-        "latestRelease": null,
-        "latestReleaseDate": null,
-        "checkedAt": "2026-11-16"
+        "lastPush": "2026-11-18T12:04:50Z",
+        "latestRelease": "v1.10.0",
+        "latestReleaseDate": "2026-11-17",
+        "checkedAt": "2026-11-23"
       }
     },
     {
@@ -181,11 +181,11 @@
         "failedRunsNotCharged": true
       },
       "live": {
-        "stars": 37,
-        "lastPush": "2026-11-16T11:14:35Z",
+        "stars": 38,
+        "lastPush": "2026-11-23T07:05:26Z",
         "latestRelease": null,
         "latestReleaseDate": null,
-        "checkedAt": "2026-11-16"
+        "checkedAt": "2026-11-23"
       }
     },
     {
